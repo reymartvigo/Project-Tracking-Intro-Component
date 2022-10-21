@@ -1,0 +1,533 @@
+@use "variable";
+
+main {
+  .bg-color {
+    width: 50%;
+    height: 27rem;
+    right: 0;
+    position: absolute;
+    background-color: variable.$lgblue;
+    border-bottom-left-radius: 4rem;
+  }
+  height: 100vh;
+  width: 100%;
+  .head {
+    position: relative;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* FOR TABLET AND DESKTOP SCREENS */
+    .nav-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      list-style: none;
+      display: none;
+      .login-nav {
+        color: variable.$gblue;
+      }
+
+      hr {
+        border: none;
+        border-radius: 100%;
+        background-color: variable.$gblue;
+        width: 0.5rem;
+        height: 0.5rem;
+      }
+      li {
+        font-family: variable.$nav;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      li:hover {
+        text-decoration: underline;
+      }
+    }
+
+    /* FOR TABLET AND DESKTOP SCREENS */
+
+    .nav-buttons {
+      display: flex;
+      position: relative;
+      button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+      }
+    }
+    #close-btn {
+      display: none;
+    }
+  }
+
+  .content {
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .mobile-nav {
+      background-image: url(../image/illustration-devices.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom left;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      height: 15rem;
+      ul {
+        font-size: 1.1rem;
+        padding: 2rem;
+        -webkit-box-shadow: 0px 2px 15px 2px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 2px 15px 2px rgba(0, 0, 0, 0.4);
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: variable.$nav;
+        font-weight: 600;
+        background-color: #fff;
+        border-radius: 0.2rem;
+        list-style: none;
+        width: 88%;
+        height: 12rem;
+        gap: 1rem;
+        letter-spacing: 1px;
+        cursor: pointer;
+        hr {
+          color: variable.$lgblue;
+          width: 100%;
+        }
+        .login {
+          color: variable.$gblue;
+        }
+        li:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .dashboard {
+      padding: 2rem;
+      margin-top: 3rem;
+
+      .title {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: variable.$gblue;
+        span {
+          font-weight: 400;
+          background-color: variable.$vrblue;
+          color: #fff;
+          padding: 0.1rem 0.5rem;
+          border-radius: 1rem;
+        }
+      }
+      h2 {
+        font-size: 2.3rem;
+        letter-spacing: 1px;
+        color: variable.$vrblue;
+        margin-bottom: 1rem;
+      }
+      p {
+        letter-spacing: 1px;
+        font-size: 1.1rem;
+        color: variable.$dgblue;
+      }
+
+      .demo {
+        font-family: variable.$nav;
+        margin-top: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        button {
+          letter-spacing: 1px;
+          font-size: 0.8rem;
+          font-family: variable.$nav;
+          font-weight: 600;
+          border-radius: 0.5rem;
+          padding: 0.8rem 1rem;
+          border: none;
+          background-color: variable.$red;
+          color: #fff;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: hsl(0, 95%, 76%);
+        }
+        p {
+          font-family: variable.$nav;
+          color: variable.$gblue;
+          letter-spacing: 2.2px;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min-width: 460px) and (max-width: 768px) {
+  main {
+    width: 100%;
+    .head {
+      .nav-links {
+        display: flex;
+      }
+      .nav-buttons {
+        display: none;
+      }
+    }
+
+    .content {
+      margin-top: 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      .mobile-nav {
+        background-size: contain;
+        background-position: center;
+        width: 100%;
+      }
+
+      .dashboard {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 10rem;
+        h2 {
+          font-size: 2.5rem;
+        }
+        .demo {
+          justify-content: center;
+          gap: 3rem;
+          button {
+            padding: 0.8rem 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  main {
+    .head {
+      padding: 3rem 2rem;
+
+      /* FOR TABLET AND DESKTOP SCREENS */
+      .nav-links {
+        display: flex;
+      }
+
+      /* FOR TABLET AND DESKTOP SCREENS */
+
+      .nav-buttons {
+        display: none;
+        position: relative;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      .mobile-nav {
+        background-size: 100%;
+        background-position: 3rem;
+        width: 100%;
+        height: 25rem;
+      }
+
+      .dashboard {
+        padding: 2rem;
+        margin-top: 1rem;
+
+        .title {
+          margin-bottom: 1rem;
+          font-size: 1.1rem;
+        }
+        p {
+          letter-spacing: 1px;
+          font-size: 1rem;
+          color: variable.$dgblue;
+        }
+
+        .demo {
+          font-family: variable.$nav;
+          margin-top: 2rem;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1rem;
+          button {
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            font-family: variable.$nav;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            padding: 0.8rem 1rem;
+            border: none;
+            background-color: variable.$red;
+            color: #fff;
+            cursor: pointer;
+          }
+          button:hover {
+            background-color: hsl(0, 95%, 76%);
+          }
+          p {
+            font-family: variable.$nav;
+            color: variable.$gblue;
+            letter-spacing: 2.2px;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    .bg-color {
+      height: 18rem;
+    }
+    .head {
+      padding: 3rem 4rem; /* FOR TABLET AND DESKTOP SCREENS */
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      /* FOR TABLET AND DESKTOP SCREENS */
+
+      .nav-buttons {
+        display: none;
+        position: relative;
+      }
+    }
+
+    .content {
+      padding-left: 4rem;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      .mobile-nav {
+        background-size: 100%;
+        background-position: 5rem;
+        width: 100%;
+        height: 25rem;
+      }
+
+      .dashboard {
+        padding: unset;
+        margin-top: 1rem;
+
+        .title {
+          margin-bottom: 1rem;
+          font-size: 1.1rem;
+        }
+        p {
+          letter-spacing: 1px;
+          font-size: 1rem;
+          color: variable.$dgblue;
+        }
+
+        .demo {
+          font-family: variable.$nav;
+          margin-top: 2rem;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1rem;
+          button {
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            font-family: variable.$nav;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            padding: 0.8rem 1rem;
+            border: none;
+            background-color: variable.$red;
+            color: #fff;
+            cursor: pointer;
+          }
+          button:hover {
+            background-color: hsl(0, 95%, 76%);
+          }
+          p {
+            font-family: variable.$nav;
+            color: variable.$gblue;
+            letter-spacing: 2.2px;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  main {
+    .bg-color {
+      height: 25rem;
+    }
+    .head {
+      padding: 5rem 10rem;
+
+      /* FOR TABLET AND DESKTOP SCREENS */
+      .nav-links {
+        font-size: 1.3rem;
+        gap: 2rem;
+      }
+
+      /* FOR TABLET AND DESKTOP SCREENS */
+    }
+
+    .content {
+      padding-left: 10rem;
+      display: flex;
+      gap: 2rem;
+
+      .mobile-nav {
+        background-size: 100%;
+        background-position: 6rem 1rem;
+        width: 130rem;
+        height: 30rem;
+      }
+
+      .dashboard {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 3rem 5rem 0;
+        margin-top: 1rem;
+        h2 {
+          font-size: 3.5rem;
+        }
+        .title {
+          span {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+          }
+        }
+        p {
+          letter-spacing: 0.6px;
+          font-size: 1.5rem;
+          color: variable.$dgblue;
+        }
+
+        .demo {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 1.5rem;
+          button {
+            letter-spacing: 1px;
+            font-size: 1rem;
+            padding: 1rem 2rem;
+          }
+          p {
+            font-family: variable.$nav;
+            color: variable.$gblue;
+            letter-spacing: 5px;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    .bg-color {
+      height: 25rem;
+    }
+    .head {
+      padding: 5rem 10rem;
+
+      /* FOR TABLET AND DESKTOP SCREENS */
+      .nav-links {
+        font-size: 1.3rem;
+        gap: 2rem;
+      }
+
+      /* FOR TABLET AND DESKTOP SCREENS */
+    }
+
+    .content {
+      padding-left: 10rem;
+      display: flex;
+      gap: 2rem;
+
+      .mobile-nav {
+        background-size: 100%;
+        background-position: 6rem 1rem;
+        width: 130rem;
+        height: 30rem;
+      }
+
+      .dashboard {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 3rem 5rem 0;
+        margin-top: 1rem;
+        h2 {
+          font-size: 3.5rem;
+        }
+        .title {
+          span {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+          }
+        }
+        p {
+          letter-spacing: 0.6px;
+          font-size: 1.5rem;
+          color: variable.$dgblue;
+        }
+
+        .demo {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 1.5rem;
+          button {
+            letter-spacing: 1px;
+            font-size: 1rem;
+            padding: 1rem 2rem;
+          }
+          p {
+            font-family: variable.$nav;
+            color: variable.$gblue;
+            letter-spacing: 5px;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
