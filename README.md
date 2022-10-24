@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 
-- Live Site URL:[https://your-live-site-url.com](https://gleaming-khapse-2a70e8.netlify.app/](https://gleaming-khapse-2a70e8.netlify.app/)
+- Live Site URL:https://gleaming-khapse-2a70e8.netlify.app/
 
 
 ## My process
